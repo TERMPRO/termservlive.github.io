@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serveur Minecraft - Accueil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .welcome-box {
+      background-color: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 600px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body onload="afficherBienvenue()">
+  <div class="welcome-box">
+    <h1>Bienvenue sur le Serveur Minecraft !</h1>
+    <p>Rejoignez-nous pour une aventure incroyable.</p>
+    <button class="btn" onclick="ouvrirPlanche()">Accéder aux informations du serveur</button>
+  </div>
+
+  <script>
+    function afficherBienvenue() {
+      alert("Bienvenue sur notre serveur Minecraft !");
+    }
+
+    function ouvrirPlanche() {
+      const plancheHTML = `
+        <!DOCTYPE html>
+        <html lang="fr">
+        <head>
+          <meta charset="UTF-8">
+          <title>Serveur Minecraft - Infos</title>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              background: url('https://i.imgur.com/mM0OskA.jpg') no-repeat center center/cover;
+              position: relative;
+              margin: 0;
+              min-height: 100vh;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            body::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.5);
+              z-index: 0;
+            }
+            .info-box {
+              position: relative;
+              background-color: rgba(255, 255, 255, 0.95);
+              padding: 50px;
+              border-radius: 20px;
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+              max-width: 600px;
+              text-align: center;
+              z-index: 1;
+            }
+            h1 {
+              color: #333;
+              font-size: 32px;
+              margin-bottom: 40px;
+            }
+            p {
+              color: #444;
+              font-size: 20px;
+              margin: 20px 0;
+              line-height: 1.5;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="info-box">
+            <h1>🌍 Informations du Serveur Minecraft 🌍</h1>
+            <p>🔗 <strong>Adresse IP :</strong><br>TERMSERVLIVE.aternos.me</p>
+            <p>🛠️ <strong>Mods :</strong><br>N/A (Aucun mod nécessaire)</p>
+          </div>
+        </body>
+        </html>
+      `;
+
+      document.open();
+      document.write(plancheHTML);
+      document.close();
+    }
+  </script>
+</body>
+</html>
